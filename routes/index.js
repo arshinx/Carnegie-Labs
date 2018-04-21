@@ -20,7 +20,11 @@ router.get('/profile', function(req, res, next) {
   // User Exists
   User.findById(req.session.userId)
     .exec(function(error, user) {
-      
+
+      // Error handling
+      if (error) {
+        return next(error);
+      }
     });
 });
 
