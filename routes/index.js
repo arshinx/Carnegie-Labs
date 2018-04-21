@@ -7,6 +7,11 @@ router.get('/', function(req, res, next) {
   return res.render('index', { title: 'Home' });
 });
 
+// GET /profile
+router.get('/profile', function(req, res, next) {
+  
+});
+
 // POST /login
 router.post('/login', function(req, res, next) {
 
