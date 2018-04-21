@@ -24,6 +24,10 @@ var UserSchema = new mongoose.Schema({
   }
 });
 
+// Authenticate input with db docs
+UserSchema.statics.authenticate = function(email, password, callback) {
+}
+
 // Hash password, prior to saving in database
 UserSchema.pre('save', function(next) {
   // get user object
