@@ -23,7 +23,9 @@ router.post('/register', function(req, res, next){
     req.body.confirmPassword) {
 
     } else {
-      
+      var err = new Error('All fields are required.');
+      err.status = 400;
+      return next(err);
     }
 });
 
