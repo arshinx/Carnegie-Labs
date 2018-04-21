@@ -28,6 +28,7 @@ var UserSchema = new mongoose.Schema({
 UserSchema.statics.authenticate = function(email, password, callback) {
   User.findOne({ email: email })
     .exec(function(error, user) {
+      // Error handling
       if (error) {
         return callback(error);
       } else if (!user) {
@@ -35,6 +36,8 @@ UserSchema.statics.authenticate = function(email, password, callback) {
         err.status = 401;
         return callback(err);
       }
+
+      // Compare password
     });
 }
 
