@@ -18,7 +18,7 @@ router.post('/login', function(req, res, next) {
         err.status = 401;
         return next(err);
       } else {
-        req.session.userId = user._id;
+        req.session.userId = user._id; // add property to session or create session
         return res.redirect('/profile');
       }
     });
