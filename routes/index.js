@@ -41,9 +41,13 @@ router.post('/register', function(req, res, next){
       // Debugging
       console.log(userData);
 
-      // Insert schema into MongoDB 
+      // Insert schema into MongoDB
       User.create(userData, function(error, user) {
-
+        if (error) {
+          return next(error);
+        } else {
+          res.redirect('/profile');
+        }
       });
 
     } else {
