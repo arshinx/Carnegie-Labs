@@ -7,6 +7,11 @@ router.get('/', function(req, res, next) {
   return res.render('index', { title: 'Home' });
 });
 
+// GET /login 
+router.get('/login', function(req, res, next) {
+
+});
+
 // GET /register
 router.get('/register', function(req, res, next) {
   return res.render('register', { title: 'Sign Up' });
