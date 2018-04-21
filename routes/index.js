@@ -73,6 +73,8 @@ router.post('/register', function(req, res, next){
         if (error) {
           return next(error);
         } else {
+          // automatically logged in once registered
+          req.session.userId = user._id;
           res.redirect('/profile');
         }
       });
