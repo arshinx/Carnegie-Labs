@@ -24,6 +24,10 @@ var UserSchema = new mongoose.Schema({
   }
 });
 
+UserSchema.pre('save', function(next) {
+
+});
+
 // Export model
 var User = mongoose.model('User', UserSchema);
 module.exports = User;
