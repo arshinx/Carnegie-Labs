@@ -9,7 +9,18 @@ router.get('/', function(req, res, next) {
 
 // POST /login
 router.post('/login', function(req, res, next) {
-  return res.send('Logged In!');
+
+  // Required Fields
+  if (req.body.email && req.body.password) {
+
+  }
+  // Error handling
+  else {
+    // Error
+    var err = new Error('Passwords do not match.');
+    err.status = 400;
+    return next(err);
+  }
 });
 
 // GET /login
