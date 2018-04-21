@@ -9,7 +9,13 @@ router.get('/', function(req, res, next) {
 
 // GET /profile
 router.get('/profile', function(req, res, next) {
-  
+
+  // Validate whether user_id exists - logged in?
+  if (!req.session.userId) {
+    var err = new Error('You are not authorized to view this page');
+    err.status = 403;
+    return next(err);
+  }
 });
 
 // POST /login
