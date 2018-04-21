@@ -24,9 +24,14 @@ var UserSchema = new mongoose.Schema({
   }
 });
 
+// Hash password, prior to saving in database
 UserSchema.pre('save', function(next) {
+  // get user object
   var user = this; // user entered info in signup form
+  // hash password
   bcrypt.hash(user.password, 10, function(err, hash) {
+    // error handler
+    
   });
 });
 
