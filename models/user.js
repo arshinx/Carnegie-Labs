@@ -26,6 +26,16 @@ var UserSchema = new mongoose.Schema({
 
 // Authenticate input with db docs
 UserSchema.statics.authenticate = function(email, password, callback) {
+  User.findOne({ email: email })
+    .exec(function(error, user) {
+      if (error) {
+        return callback(error);
+      } else if (!user) {
+        var err = new Error('User not found.');
+        err.status = 401;
+        return callback(err);
+      }
+    });
 }
 
 // Hash password, prior to saving in database
