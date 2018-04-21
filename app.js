@@ -4,6 +4,13 @@ var mongoose    = require('mongoose');
 var session     = require('express-session');
 var app = express();
 
+// Use sessions for tracking logins
+app.use(session({
+  secret: 'carnegie labs likes you',
+  resave: true,
+  saveUnitialized: false
+}));
+
 // Mongo DB Connection
 mongoose.connect("mongodb://localhost:27017/express-auth");
 var db = mongoose.connection;
