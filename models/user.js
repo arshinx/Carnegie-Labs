@@ -34,6 +34,10 @@ UserSchema.pre('save', function(next) {
     if (err) {
       return next(err);
     }
+
+    // Overwrite password with hash
+    user.password = hash;
+    next();
   });
 });
 
