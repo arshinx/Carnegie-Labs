@@ -25,7 +25,7 @@ var UserSchema = new mongoose.Schema({
 });
 
 UserSchema.pre('save', function(next) {
-
+  var user = this; // user entered info in signup form
 });
 
 // Export model
