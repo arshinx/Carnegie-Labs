@@ -16,6 +16,12 @@ router.get('/profile', function(req, res, next) {
     err.status = 403;
     return next(err);
   }
+
+  // User Exists
+  User.findById(req.session.userId)
+    .exec(function(error, user) {
+      
+    });
 });
 
 // POST /login
