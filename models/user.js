@@ -38,6 +38,9 @@ UserSchema.statics.authenticate = function(email, password, callback) {
       }
 
       // Compare password
+      bcrypt.compare(password, user.password, function(error, result) {
+
+      });
     });
 }
 
