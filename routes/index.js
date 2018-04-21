@@ -17,7 +17,7 @@ router.post('/login', function(req, res, next) {
   // Error handling
   else {
     // Error
-    var err = new Error('Passwords do not match.');
+    var err = new Error('Email & Password are required.');
     err.status = 400;
     return next(err);
   }
