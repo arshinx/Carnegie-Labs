@@ -38,6 +38,11 @@ router.post('/register', function(req, res, next){
         password: req.body.password
       }
 
+      // Debugging
+      console.log(userData);
+
+
+
     } else {
       // Error
       var err = new Error('All fields are required.');
