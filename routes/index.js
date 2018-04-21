@@ -22,7 +22,16 @@ router.post('/register', function(req, res, next){
     req.body.password &&
     req.body.confirmPassword) {
 
+      // Confirm user typed same password twice
+      if (req.body.password !== req.body.confirmPassword) {
+        // Error
+        var err = new Error('Passwords do not match.');
+        err.status = 400;
+        return next(err);
+      }
+
     } else {
+      // Error
       var err = new Error('All fields are required.');
       err.status = 400;
       return next(err);
