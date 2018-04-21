@@ -26,6 +26,8 @@ var UserSchema = new mongoose.Schema({
 
 UserSchema.pre('save', function(next) {
   var user = this; // user entered info in signup form
+  bcrypt.hash(user.password, 10, function(err, hash) {
+  });
 });
 
 // Export model
