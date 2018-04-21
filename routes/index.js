@@ -12,7 +12,8 @@ router.post('/login', function(req, res, next) {
 
   // Required Fields
   if (req.body.email && req.body.password) {
-
+    User.authenticate(req.body.email, req.body.password, function (error, user) {
+    });
   }
   // Error handling
   else {
