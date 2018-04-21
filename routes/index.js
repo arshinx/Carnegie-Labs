@@ -38,9 +38,6 @@ router.post('/register', function(req, res, next){
         password: req.body.password
       }
 
-      // Debugging
-      console.log(userData);
-
       // Insert schema into MongoDB
       User.create(userData, function(error, user) {
         if (error) {
