@@ -9,7 +9,7 @@ router.get('/', function(req, res, next) {
 
 // POST /login
 router.post('/login', function(req, res, next) {
-
+  return res.send('Logged In!');
 });
 
 // GET /login
