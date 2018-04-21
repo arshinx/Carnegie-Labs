@@ -24,6 +24,9 @@ router.get('/profile', function(req, res, next) {
       // Error handling
       if (error) {
         return next(error);
+      } else {
+        // Show Profile
+        return res.render('Profile', { title: 'Profile', name: user.name, favorite: user.favoriteBook });
       }
     });
 });
