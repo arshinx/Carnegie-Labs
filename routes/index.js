@@ -65,7 +65,14 @@ router.get('/login', function(req, res, next) {
 router.get('/logout', function(req, res, next) {
   // session exists? delete session object
   if (req.session) {
-    req.session.destroy();
+    req.session.destroy(function(err) {
+      // Error handler
+      if (err) {
+        return next(err);
+      } else {
+        return res.redirect('/');
+      }
+    });
   }
 });
 
