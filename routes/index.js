@@ -61,6 +61,11 @@ router.get('/login', function(req, res, next) {
   return res.render('login', { title: 'Log In'});
 });
 
+// GET /logout
+router.get('/logout', function(req, res, next) {
+  
+});
+
 // GET /register
 router.get('/register', function(req, res, next) {
   return res.render('register', { title: 'Sign Up' });
