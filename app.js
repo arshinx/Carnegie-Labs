@@ -13,7 +13,7 @@ app.use(session({
 
 // Make user ID available in templates
 app.use(function (req, res, next) {
-  res.locals.currentUser = req.session.userId;
+  res.locals.currentUser = req.session.userId; // undefined if not logged in
   next();
 });
 
