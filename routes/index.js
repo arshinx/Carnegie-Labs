@@ -9,7 +9,7 @@ router.get('/', function(req, res, next) {
 });
 
 // GET /profile
-router.get('/profile', function(req, res, next) {
+router.get('/profile', requiresLogin, function(req, res, next) {
 
   // Validate whether user_id exists - logged in?
   if (!req.session.userId) {
