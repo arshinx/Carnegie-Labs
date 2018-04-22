@@ -9,7 +9,10 @@ var app = express();
 app.use(session({
   secret: 'carnegie labs likes you',
   resave: true,
-  saveUnitialized: false
+  saveUnitialized: false,
+  store: new MongoStore({
+    mongooseConnection: db
+  })
 }));
 
 // Make user ID available in templates
