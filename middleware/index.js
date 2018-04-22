@@ -23,3 +23,4 @@ function requiresLogin(req, res, next) {
 
 // Export Middleware
 module.exports.loggedOut = loggedOut;
+module.exports.requiresLogin = requiresLogin;
