@@ -17,7 +17,7 @@ app.use(session({
   resave: true,
   saveUnitialized: false,
   store: new MongoStore({
-    mongooseConnection: db
+    mongooseConnection: db // store data in monogdb rather than RAM
   })
 }));
 
