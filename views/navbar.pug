@@ -12,4 +12,8 @@ nav.navbar.navbar-fixed-top.navbar-dark.bg-inverse
         a.nav-item.nav-link(href='contact') Contact
         a.nav-item.nav-link(href='profile') Profile
 
+      if currentUser
+        div
+          img.avatar.img-circle.hidden-xs-down(src='/images/avatar.png', alt='avatar')
+          a.btn.btn-light.pull-md-right(href='/logout') Log Out
       a.btn.btn-info.pull-md-right(href='login') Login
