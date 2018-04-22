@@ -5,6 +5,12 @@ var session     = require('express-session');
 var MongoStore  = require('connect-mongo')(session);
 var app = express();
 
+// Mongo DB Connection
+mongoose.connect("mongodb://localhost:27017/express-auth");
+var db = mongoose.connection;
+// Mongo Errors
+db.on('error', console.error.bind(console, 'connection error!'));
+
 // Use sessions for tracking logins
 app.use(session({
   secret: 'carnegie labs likes you',
@@ -20,12 +26,6 @@ app.use(function (req, res, next) {
   res.locals.currentUser = req.session.userId; // undefined if not logged in
   next();
 });
-
-// Mongo DB Connection
-mongoose.connect("mongodb://localhost:27017/express-auth");
-var db = mongoose.connection;
-// Mongo Errors
-db.on('error', console.error.bind(console, 'connection error!'));
 
 // parse incoming requests
 app.use(bodyParser.json());
