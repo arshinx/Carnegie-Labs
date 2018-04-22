@@ -78,7 +78,7 @@ router.get('/logout', function(req, res, next) {
 });
 
 // GET /register
-router.get('/register', function(req, res, next) {
+router.get('/register', mid.loggedOut, function(req, res, next) {
   return res.render('register', { title: 'Sign Up' });
 });
 
