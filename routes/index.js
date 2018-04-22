@@ -63,7 +63,10 @@ router.get('/login', function(req, res, next) {
 
 // GET /logout
 router.get('/logout', function(req, res, next) {
-  
+  // session exists? delete session object
+  if (req.session) {
+    req.session.destroy();
+  }
 });
 
 // GET /register
