@@ -5,6 +5,8 @@ var session     = require('express-session');
 var MongoStore  = require('connect-mongo')(session);
 var app = express();
 
+// TODO: Use HTTPS
+
 // Mongo DB Connection
 mongoose.connect("mongodb://localhost:27017/express-auth");
 var db = mongoose.connection;
